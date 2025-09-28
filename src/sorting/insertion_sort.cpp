@@ -11,7 +11,6 @@
  */
 
 #include <vector>
-#include <iostream>
 #include "algorithms/sorting.hpp"
 
 void insertion_sort(std::vector<int>& input) {
