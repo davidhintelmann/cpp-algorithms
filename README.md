@@ -102,8 +102,8 @@ Each algorithm includes:
 - Example usage in test cases
 
 Example documentation:
-1. [docs\01-introduction.md](docs\01-introduction.md)
-2. [docs\02-getting-started.md](docs\02-getting-started.md)
+1. [docs/01-introduction.md](docs/01-introduction.md)
+2. [docs/02-getting-started.md](docs/02-getting-started.md)
 
 ## Roadmap
 - [ ] Complete all major Sorting algorithms

@@ -4,7 +4,7 @@ This chapter introduces simple algorithms, their analysis, and the process of de
 
 ## 2.1 Insertion Sort
 
-See [cpp code example](../src/sorting/insertion_sort.cpp)
+See this repo's [cpp implementation](../src/sorting/insertion_sort.cpp)
 
 - A simple, intuitive sorting algorithm.
 - Works the way people often sort playing cards:
