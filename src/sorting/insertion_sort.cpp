@@ -12,3 +12,10 @@
 
 #include <vector>
 #include <iostream>
+#include "algorithms/sorting.hpp"
+
+void insertion_sort(std::vector<int>& input) {
+    int length = input.size();
+    std::cout << "length " << length << std::endl;
+    std::cout << "test works" << std::endl;
+}

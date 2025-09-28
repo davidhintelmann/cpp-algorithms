@@ -1,2 +1,5 @@
 # ignore binary folder where executeables are created for running GoogleTest
 build/
+
+#ignore vscode settings
+.vscode/
