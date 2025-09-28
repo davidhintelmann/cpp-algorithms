@@ -1,6 +1,6 @@
-# Chapter 2 — sorting
+# 2 — sorting
 
-This chapter introduces simple algorithms, their analysis, and the process of designing them.
+This section introduces simple algorithms, their analysis, and the process of designing them.
 
 ## 2.1 Insertion Sort
 
