@@ -18,9 +18,9 @@ sequenceDiagram
     participant BubbleSort
 
     BubbleSort->>Array: Start Bubble Sort
-    loop for i = 0 to n-1
+    loop for i = n to 1
         BubbleSort->>Array: Outer loop i
-        loop for j = 0 to n-i-2
+        loop for j = 0 to i-1
             BubbleSort->>Array: Compare arr[j] and arr[j+1]
             alt arr[j] > arr[j+1]
                 BubbleSort->>Array: Swap arr[j] and arr[j+1]
