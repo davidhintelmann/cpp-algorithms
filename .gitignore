@@ -1,5 +1,8 @@
 # ignore binary folder where executeables are created for running GoogleTest
 build/
 
-#ignore vscode settings
+# ignore vscode settings
 .vscode/
+
+# ignore obsidian vault json files
+docs/.obsidian/

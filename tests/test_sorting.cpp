@@ -16,11 +16,50 @@ void run_sort_test(SortFunc sort_function) {
     EXPECT_EQ(input, expected);
 }
 
-// ---------- Tests ----------
-TEST(SortingTest, InsertionSort) {
-    run_sort_test([](std::vector<int>& arr) {
-        insertion_sort(arr);   // your implementation
-    });
+// ---------- Tests Input/Output ----------
+// Bubble Sort
+TEST(SortingTest, BubbleSort) {run_sort_test([](std::vector<int>& arr) {bubble_sort(arr);});}
+
+TEST(SortingTest, EmptyVector_BS) {
+    std::vector<int> arr;
+    bubble_sort(arr);
+    EXPECT_TRUE(arr.empty());
+}
+
+TEST(SortingTest, AlreadySorted_BS) {
+    std::vector<int> arr    = {1, 2, 3, 4, 5};
+    std::vector<int> before = arr;
+    bubble_sort(arr);
+    EXPECT_EQ(arr, before);
+}
+
+TEST(SortingTest, ReverseSorted_BS) {
+    std::vector<int> arr    = {5, 4, 3, 2, 1};
+    std::vector<int> expect = {1, 2, 3, 4, 5};
+    bubble_sort(arr);
+    EXPECT_EQ(arr, expect);
+}
+// Insertion Sort
+TEST(SortingTest, InsertionSort) {run_sort_test([](std::vector<int>& arr) {insertion_sort(arr);});}
+
+TEST(SortingTest, EmptyVector_IS) {
+    std::vector<int> arr;
+    insertion_sort(arr);
+    EXPECT_TRUE(arr.empty());
+}
+
+TEST(SortingTest, AlreadySorted_IS) {
+    std::vector<int> arr    = {1, 2, 3, 4, 5};
+    std::vector<int> before = arr;
+    insertion_sort(arr);
+    EXPECT_EQ(arr, before);
+}
+
+TEST(SortingTest, ReverseSorted_IS) {
+    std::vector<int> arr    = {5, 4, 3, 2, 1};
+    std::vector<int> expect = {1, 2, 3, 4, 5};
+    insertion_sort(arr);
+    EXPECT_EQ(arr, expect);
 }
 
 // TEST(SortingTest, QuickSort) {
@@ -28,23 +67,3 @@ TEST(SortingTest, InsertionSort) {
 //         quicksort(arr, 0, arr.size() - 1);  // assumes quicksort with indices
 //     });
 // }
-
-TEST(SortingTest, EmptyVector) {
-    std::vector<int> arr;
-    insertion_sort(arr);
-    EXPECT_TRUE(arr.empty());
-}
-
-TEST(SortingTest, AlreadySorted) {
-    std::vector<int> arr    = {1, 2, 3, 4, 5};
-    std::vector<int> before = arr;
-    insertion_sort(arr);
-    EXPECT_EQ(arr, before);
-}
-
-TEST(SortingTest, ReverseSorted) {
-    std::vector<int> arr    = {5, 4, 3, 2, 1};
-    std::vector<int> expect = {1, 2, 3, 4, 5};
-    insertion_sort(arr);
-    EXPECT_EQ(arr, expect);
-}

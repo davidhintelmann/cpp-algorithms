@@ -14,7 +14,7 @@
 #include "algorithms/sorting.hpp"
 
 void insertion_sort(std::vector<int>& input) {
-    for (size_t i = 1; i < input.size(); i++) {
+    for (std::size_t i = 1; i < input.size(); i++) {
         int key = input[i];
         int j = i-1;
         while (j >= 0 && input[j] > key) {
