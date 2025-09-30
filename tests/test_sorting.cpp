@@ -62,6 +62,29 @@ TEST(SortingTest, ReverseSorted_IS) {
     EXPECT_EQ(arr, expect);
 }
 
+// Merge Sort
+TEST(SortingTest, MergeSort) {run_sort_test([](std::vector<int>& arr) {merge_sort(arr, 0, arr.size()-1);});}
+
+TEST(SortingTest, EmptyVector_MS) {
+    std::vector<int> arr;
+    merge_sort(arr, 0 , arr.size());
+    EXPECT_TRUE(arr.empty());
+}
+
+TEST(SortingTest, AlreadySorted_MS) {
+    std::vector<int> arr    = {1, 2, 3, 4, 5};
+    std::vector<int> before = arr;
+    merge_sort(arr, 0 , arr.size());
+    EXPECT_EQ(arr, before);
+}
+
+TEST(SortingTest, ReverseSorted_MS) {
+    std::vector<int> arr    = {5, 4, 3, 2, 1};
+    std::vector<int> expect = {1, 2, 3, 4, 5};
+    merge_sort(arr, 0 , arr.size());
+    EXPECT_EQ(arr, expect);
+}
+
 // TEST(SortingTest, QuickSort) {
 //     run_sort_test([](std::vector<int>& arr) {
 //         quicksort(arr, 0, arr.size() - 1);  // assumes quicksort with indices
