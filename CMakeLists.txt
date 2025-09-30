@@ -34,10 +34,6 @@ target_link_libraries(runTests
 include(GoogleTest)
 gtest_discover_tests(runTests)
 
-# Example executable
-# add_executable(insertion_sort_demo src/sorting/insertion_sort.cpp)
-# target_link_libraries(insertion_sort_demo PRIVATE algorithms)
-
 # Compiler warnings
 if (MSVC)
     target_compile_options(algorithms PRIVATE /W4 /permissive-)
