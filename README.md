@@ -70,8 +70,9 @@ make
 
 ## Algorithms Implemented
 1. Foundations
+   - [x] Bubble Sort
    - [x] Insertion Sort
-   - [ ] Merge Sort
+   - [x] Merge Sort
    - [ ] Analyzing Algorithms
 2. Sorting & Order Statistics
    - [ ] Heapsort
@@ -103,7 +104,7 @@ Each algorithm includes:
 
 Example documentation:
 1. [docs/01-introduction.md](docs/01-introduction.md)
-2. [docs/02-getting-started.md](docs/02-getting-started.md)
+2. [docs/02-sorting.md](docs/02-sorting.md)
 
 ## Roadmap
 - [ ] Complete all major Sorting algorithms
