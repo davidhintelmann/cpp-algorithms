@@ -4,7 +4,7 @@ This section introduces simple algorithms, their analysis, and the process of de
 
 ## 2.1 Bubble sort
 
-See this repo's [cpp implementation](../src/sorting/bubble_sort.cpp)
+See this repo's cpp implementation for [bubble sort](../src/sorting/bubble_sort.cpp)
 
 Bubble sort is one of the simplest sorting algorithms. 
 It repeatedly compares adjacent elements and swaps them if they are in the wrong order. 
@@ -32,20 +32,19 @@ sequenceDiagram
     BubbleSort->>Array: Array is sorted
 ```
 
-**Properties**
+### Properties and Time Complexity
 - Stable: Equal elements retain their relative order.
 - In-place: Requires no extra memory beyond a few variables.
 - Adaptive: With an early-exit optimization, best case becomes O(n).
 
-**Complexity**
-- Best case: O(n) (already sorted, with early exit)
-- Worst case: O(n²)
-- Average case: O(n²)
-- Space complexity: O(1)
+- Best case: **O(n)** (already sorted, with early exit)
+- Worst case: **O(n²)**
+- Average case: **O(n²)**
+- Space complexity: **O(1)**
 
 ## 2.2 Insertion Sort
 
-See this repo's [cpp implementation](../src/sorting/insertion_sort.cpp)
+See this repo's cpp implementation for [insertion sort](../src/sorting/insertion_sort.cpp)
 
 - A simple, intuitive sorting algorithm.
 - Works the way people often sort playing cards:
@@ -66,7 +65,7 @@ i = i - 1
 A[i + 1] = key
 ```
 
-### Time Complexity
+### Properties and Time Complexity
 - Best case: **O(n)** (already sorted)
 - Worst case: **O(n²)**
 - Average case: **O(n²)**
@@ -91,3 +90,64 @@ A[i + 1] = key
 - Insertion Sort is easy to implement and efficient for small arrays.
 - Algorithm analysis allows fair comparison independent of hardware.
 - Early chapters build the foundation for advanced algorithm design.
+
+## 2.5 Merge sort
+
+See this repo's cpp implementation for [merge sort](../src/sorting/merge_sort.cpp)
+
+Merge Sort is a classic **divide-and-conquer** sorting algorithm.  
+It works by recursively splitting an array into halves until each subarray contains a single element, and then merging the subarrays back together in sorted order.  
+ 
+
+```mermaid
+graph TD
+    A["Unsorted Array"] --> B["Divide into Left Half"]
+    A --> C["Divide into Right Half"]
+
+    B --> D["Sort Left Half (recursive)"]
+    C --> E["Sort Right Half (recursive)"]
+
+    D --> F["Merge"]
+    E --> F["Merge"]
+
+    F --> G["Sorted Array"]
+```
+
+The key step in merge sort is the **merge** procedure, which takes two sorted subarrays and combines them into a single sorted array.
+
+```mermaid
+sequenceDiagram
+    participant Left as Left Subarray (L)
+    participant Right as Right Subarray (R)
+    participant Array as Original Array (A)
+
+    Note over Left,Right: Both L and R are already sorted
+
+    Left->>Array: Compare L[i] with R[j]
+    Right->>Array: Place smaller element into A[k]
+    Array-->>Left: Increment i if L[i] chosen
+    Array-->>Right: Increment j if R[j] chosen
+
+    loop While elements remain in both L and R
+        Left->>Array: Insert next smallest element
+        Right->>Array: Insert next smallest element
+    end
+
+    opt Remaining elements in L
+        Left->>Array: Copy all remaining elements
+    end
+
+    opt Remaining elements in R
+        Right->>Array: Copy all remaining elements
+    end
+
+    Note over Array: Result is a merged, sorted subarray
+```
+
+### Properties and Time Complexity
+
+- Best case: **O(n log n)**
+- Worst case: **O(n log n)**
+- Average case: **O(n log n)**
+- Space: **O(n)**
+- Stable: **Yes**
