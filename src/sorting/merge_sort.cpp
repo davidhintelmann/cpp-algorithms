@@ -1,3 +1,15 @@
+/*
+ * Merge Sort
+ * CLRS - Chapter 2.3
+ * 
+ * Time Complexity:
+ *   - Best: O(n log n)
+ *   - Worst: O(n log n)
+ *   - Average: O(n log n)
+ *
+ * Space Complexity: O(n)
+ */
+
 #include <vector>
 
 static void merge(std::vector<int>& input, size_t p, size_t q, size_t r) {

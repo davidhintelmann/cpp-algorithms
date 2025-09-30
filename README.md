@@ -72,7 +72,7 @@ make
 1. Foundations
    - [x] Bubble Sort
    - [x] Insertion Sort
-   - [ ] Merge Sort
+   - [x] Merge Sort
    - [ ] Analyzing Algorithms
 2. Sorting & Order Statistics
    - [ ] Heapsort

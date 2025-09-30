@@ -71,27 +71,7 @@ A[i + 1] = key
 - Average case: **O(n²)**
 - Space: **O(1)** (in-place)
 
-## 2.3 Analyzing Algorithms
-
-- **Running time** depends on input size `n`.
-- We estimate the number of *primitive operations* (comparisons, assignments).
-- Use **asymptotic analysis** (Big-O, Θ, Ω) to compare growth rates.
-
-## 2.4 Designing Algorithms
-
-- Key strategies include:
-  - **Divide and Conquer**
-  - **Dynamic Programming**
-  - **Greedy Methods**
-- These form the foundation for the rest of this repo and computer science algorithms in general.
-
-## Key Takeaways
-
-- Insertion Sort is easy to implement and efficient for small arrays.
-- Algorithm analysis allows fair comparison independent of hardware.
-- Early chapters build the foundation for advanced algorithm design.
-
-## 2.5 Merge sort
+## 2.3 Merge sort
 
 See this repo's cpp implementation for [merge sort](../src/sorting/merge_sort.cpp)
 
@@ -151,3 +131,23 @@ sequenceDiagram
 - Average case: **O(n log n)**
 - Space: **O(n)**
 - Stable: **Yes**
+
+## 2.4 Analyzing Algorithms
+
+- **Running time** depends on input size `n`.
+- We estimate the number of *primitive operations* (comparisons, assignments).
+- Use **asymptotic analysis** (Big-O, Θ, Ω) to compare growth rates.
+
+## 2.5 Designing Algorithms
+
+- Key strategies include:
+  - **Divide and Conquer**
+  - **Dynamic Programming**
+  - **Greedy Methods**
+- These form the foundation for the rest of this repo and computer science algorithms in general.
+
+## Key Takeaways
+
+- Insertion Sort is easy to implement and efficient for small arrays.
+- Algorithm analysis allows fair comparison independent of hardware.
+- Early chapters build the foundation for advanced algorithm design.
