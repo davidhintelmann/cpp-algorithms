@@ -94,6 +94,12 @@ make
   
 *More algorithms will be added progressively — see Roadmap*
 
+## Tests 
+
+This repo makes use of [googletest](https://github.com/google/googletest), a Google Testing and Mocking Framework for C++
+
+After building this project with cmake, you will find a binary file inside the `build` directory called `runTests`
+
 ## Documentation
 
 Each algorithm includes:
