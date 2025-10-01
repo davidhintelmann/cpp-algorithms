@@ -16,8 +16,8 @@ cpp-algorithms/
 │── CMakeLists.txt
 │
 ├── docs/                    # Explanations, notes, and complexity analysis
-│   ├── 02-getting-started.md
-│   ├── 06-heapsort.md
+│   ├── 01-introduction.md
+│   ├── 02-sorting.md
 │   └── ...
 │
 ├── include/                 # Reusable headers
