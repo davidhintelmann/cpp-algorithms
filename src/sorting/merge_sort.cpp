@@ -13,7 +13,7 @@
 #include <vector>
 
 static void merge(std::vector<int>& input, size_t p, size_t q, size_t r) {
-    size_t nl = p-q+1; // length of input[p:q]
+    size_t nl = q-p+1; // length of input[p:q]
     size_t nr = r-q; // length of input[p+1:r]
 
     std::vector<int> L;
@@ -21,15 +21,14 @@ static void merge(std::vector<int>& input, size_t p, size_t q, size_t r) {
     L.resize(nl);
     R.resize(nr);
 
-    for (size_t i = 0; i < nl-1; i++) { 
+    for (size_t i = 0; i < nl; i++) { 
         L[i] = input[p+i]; // copy A[p:q] into L[0:nl-1]
     }
-    for (size_t j = 0; j < nr-1; j++) {
+    for (size_t j = 0; j < nr; j++) {
         R[j] = input[q+j+1]; // copy A[q+1:r] into R[0:nr-1]
     }
 
-    size_t i; // i indexes the samllest remaining element in L
-    size_t j; // j indexes the smallest remaining element in R
+    size_t i = 0, j = 0; // i indexes the samllest remaining element in L, j indexes the smallest remaining element in R
     size_t k = p;
 
     // as long as each of the arrys L and R contains an unmerged element, 
@@ -58,11 +57,8 @@ static void merge(std::vector<int>& input, size_t p, size_t q, size_t r) {
 }
 
 void merge_sort(std::vector<int>& input, size_t p, size_t r) {
-    size_t q;
-    if (p >= r) {
-        return;
-    }
-    q = (p+r)/2;
+    if (p >= r || input.empty()) return;
+    size_t q = (p+r)/2;
     merge_sort(input, p, q);
     merge_sort(input, q+1, r);
     merge(input, p,q,r);

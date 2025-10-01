@@ -67,21 +67,21 @@ TEST(SortingTest, MergeSort) {run_sort_test([](std::vector<int>& arr) {merge_sor
 
 TEST(SortingTest, EmptyVector_MS) {
     std::vector<int> arr;
-    merge_sort(arr, 0 , arr.size());
+    merge_sort(arr, 0, arr.size()-1);
     EXPECT_TRUE(arr.empty());
 }
 
 TEST(SortingTest, AlreadySorted_MS) {
     std::vector<int> arr    = {1, 2, 3, 4, 5};
     std::vector<int> before = arr;
-    merge_sort(arr, 0 , arr.size());
+    merge_sort(arr, 0, arr.size()-1);
     EXPECT_EQ(arr, before);
 }
 
 TEST(SortingTest, ReverseSorted_MS) {
     std::vector<int> arr    = {5, 4, 3, 2, 1};
     std::vector<int> expect = {1, 2, 3, 4, 5};
-    merge_sort(arr, 0 , arr.size());
+    merge_sort(arr, 0, arr.size()-1);
     EXPECT_EQ(arr, expect);
 }
 
