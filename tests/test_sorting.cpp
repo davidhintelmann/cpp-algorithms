@@ -1,5 +1,12 @@
 #include <gtest/gtest.h>
 #include <vector>
+#include <array>
+#include <list>
+#include <deque>
+#include <string>
+#include <set>
+#include <map>
+#include <span>
 #include <algorithm>
 
 // Include your sorting headers
@@ -84,6 +91,67 @@ TEST(SortingTest, ReverseSorted_MS) {
     merge_sort(arr, 0, arr.size()-1);
     EXPECT_EQ(arr, expect);
 }
+
+// Modern insertion sort
+TEST(SortingTest, ModernInsertionSort) {run_sort_test([](std::vector<int>& arr) {insertion_sort_template(arr.begin(), arr.end());});}
+
+TEST(SortingTest, EmptyVector_MIS) {
+    std::vector<int> arr;
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_TRUE(arr.empty());
+}
+
+TEST(SortingTest, AlreadySorted_MIS) {
+    std::vector<int> arr    = {1, 2, 3, 4, 5};
+    std::vector<int> before = arr;
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, before);
+}
+
+TEST(SortingTest, ReverseSorted_MIS) {
+    std::vector<int> arr    = {5, 4, 3, 2, 1};
+    std::vector<int> expect = {1, 2, 3, 4, 5};
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, expect);
+}
+
+TEST(SortingTest, ReverseSorted_MIS_array) {
+    std::array<int, 5> arr    = {5, 4, 3, 2, 1};
+    std::array<int, 5> expect = {1, 2, 3, 4, 5};
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, expect);
+}
+
+TEST(SortingTest, ReverseSorted_MIS_list) {
+    std::list<int> arr    = {5, 4, 3, 2, 1};
+    std::list<int> expect = {1, 2, 3, 4, 5};
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, expect);
+}
+
+TEST(SortingTest, ReverseSorted_MIS_deque) {
+    std::deque<int> arr    = {5, 4, 3, 2, 1};
+    std::deque<int> expect = {1, 2, 3, 4, 5};
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, expect);
+}
+
+TEST(SortingTest, ReverseSorted_MIS_string) {
+    std::string arr    = "edcba";
+    std::string expect = "abcde";
+    insertion_sort_template(arr.begin(), arr.end());
+    EXPECT_EQ(arr, expect);
+}
+
+// need to use C++20
+// TEST(SortingTest, ReverseSorted_MIS_span) {
+//     int raw[] = {5, 4, 3, 2, 1};
+//     std::span<int> arr(raw);
+//     int expected_raw[] = {1, 2, 3, 4, 5};
+//     std::span<int> expect(expected_raw);
+//     insertion_sort_template(arr.begin(), arr.end());
+//     EXPECT_TRUE(std::equal(arr.begin(), arr.end(), expect.begin()));
+// }
 
 // TEST(SortingTest, QuickSort) {
 //     run_sort_test([](std::vector<int>& arr) {
