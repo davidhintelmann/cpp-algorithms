@@ -1,6 +1,6 @@
 # C++ Algorithms from Introduction to Algorithms (CLRS)
 
-This repository contains C++ implementations of algorithms and data structures from the classic textbook Introduction to Algorithms by Cormen, Leiserson, Rivest, and Stein (CLRS).
+This repository contains C++17 implementations of algorithms and data structures from the classic textbook Introduction to Algorithms by Cormen, Leiserson, Rivest, and Stein (CLRS).
 
 There are two goals for this repo:
 1. Provide clear, well-documented implementations for learners.
